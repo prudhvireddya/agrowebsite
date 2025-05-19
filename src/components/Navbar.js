@@ -33,6 +33,8 @@ function Navbar() {
         <Link to="/" style={linkStyle("/")}>Home</Link>
         <Link to="/about" style={linkStyle("/about")}>About</Link>
         <Link to="/products" style={linkStyle("/products")}>Products</Link>
+        <Link to="/events" style={linkStyle("/events")}>Events</Link>
+        <Link to="/newsletter" style={linkStyle("/newsletter")}>Newsletter</Link>
         <Link to="/careers" style={linkStyle("/careers")}>Careers</Link>
         <Link to="/contact" style={linkStyle("/contact")}>Contact</Link>
       </div>

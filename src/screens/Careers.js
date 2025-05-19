@@ -13,9 +13,15 @@ function Careers() {
 
       {!submitted ? (
         <form
-          action="https://formspree.io/f/mwkgbvga"  // Replace with your real Formspree endpoint
+          action="https://formspree.io/f/mvgaygrp"  // Replace with your real Formspree endpoint
           method="POST"
-          onSubmit={() => setSubmitted(true)}
+          encType="multipart/form-data"
+          onSubmit={(e) => {
+            e.preventDefault(); // ⛔ stop React default
+            e.target.submit();  // ✅ manually submit the form
+            setSubmitted(true); // ✅ show the message
+          }}
+          
           style={{
             maxWidth: "600px",
             margin: "0 auto",
@@ -30,7 +36,10 @@ function Careers() {
           <input name="phone" type="tel" placeholder="Phone Number" required style={inputStyle} />
           <input name="role" type="text" placeholder="Role You're Applying For" required style={inputStyle} />
           <textarea name="message" rows="4" placeholder="Tell us about yourself..." required style={inputStyle} />
-
+          {/* <label style={{ fontSize: "16px" }}>
+            Upload Resume:
+            <input name="resume" type="file" accept=".pdf,.doc,.docx" required style={{ marginTop: "8px" }} />
+          </label> */}
           <button type="submit" style={buttonStyle}>Submit Application</button>
         </form>
       ) : (

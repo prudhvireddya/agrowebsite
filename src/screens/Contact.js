@@ -13,9 +13,14 @@ function Contact() {
 
       {!submitted ? (
         <form
-          action="https://formspree.io/f/mwkgbvga"  // Replace this with your Formspree form endpoint
+          action="https://formspree.io/f/mvgaygrp"  // Replace this with your Formspree form endpoint
           method="POST"
-          onSubmit={() => setSubmitted(true)}
+          onSubmit={(e) => {
+            e.preventDefault(); // ⛔ stop React default
+            e.target.submit();  // ✅ manually submit the form
+            setSubmitted(true); // ✅ show the message
+          }}
+          
           style={{
             maxWidth: "600px",
             margin: "0 auto",

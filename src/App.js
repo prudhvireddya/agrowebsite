@@ -8,6 +8,8 @@ import About from "./screens/About";
 import Products from "./screens/Products";
 import Careers from "./screens/Careers";
 import Contact from "./screens/Contact";
+import Newsletter from "./screens/Newsletter";
+import Events from "./screens/Events";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
       <Footer />
     </Router>
